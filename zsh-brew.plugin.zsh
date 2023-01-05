@@ -20,7 +20,7 @@ if (( ! $+commands[brew] )); then
     fi
 fi
 
-if (( ! $+commands[brew] )); then
+if (( $+commands[brew] )); then
     # If the 'HOMEBREW_PREFIX' environment variable is not populated then
     # request the prefix from 'brew' and populate
     if [[ -z "$HOMEBREW_PREFIX" ]]; then
