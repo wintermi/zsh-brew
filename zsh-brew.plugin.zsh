@@ -15,9 +15,6 @@ if (( ! $+commands[brew] )); then
     done
 
     eval "$("$BREW_PATH" shellenv)"
-    # Tidy up environment
-    unset DEFAULT_BREW_PATHS
-    unset BREW_PATH
 fi
 
 if (( $+commands[brew] )); then
@@ -37,7 +34,4 @@ if (( $+commands[brew] )); then
         autoload -Uz compinit
         compinit
     fi
-    # More tidying up
-    unset HOMEBREW_PREFIX
-    unset HOMEBREW_SITE_FUNCTIONS
 fi
