@@ -34,7 +34,13 @@ if (( $+commands[brew] )); then
         typeset -TUx FPATH fpath
         fpath=("$HOMEBREW_SITE_FUNCTIONS" $fpath)
 
+        # Load and initialise completion system, though only regenerate
+        # once every 24 hours to improve overall startup performance
         autoload -Uz compinit
-        compinit
+        if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+            compinit
+        else
+            compinit -C
+        fi
     fi
 fi
