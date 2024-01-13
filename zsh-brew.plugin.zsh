@@ -16,7 +16,7 @@ if (( ! $+commands[brew] )); then
 
     # If a path was found, setup the shell environment
     if [[ ! -z "$BREW_PATH" ]]; then
-        eval "$("$BREW_PATH" shellenv)"
+        eval "$("$BREW_PATH" shellenv zsh)"
     fi
 fi
 
