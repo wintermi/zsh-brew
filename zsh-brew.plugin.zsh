@@ -37,10 +37,9 @@ if (( $+commands[brew] )); then
         # Load and initialise completion system, though only regenerate
         # once every 24 hours to improve overall startup performance
         autoload -Uz compinit
-        if [[ -n "${XDG_DATA_HOME:-$HOME}/.zcompdump"(#qN.mh+24) ]]; then
-            compinit
-        else
-            compinit -C
-        fi
+        for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
+          compinit
+        done
+        compinit -C
     fi
 fi
