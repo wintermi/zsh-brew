@@ -33,9 +33,5 @@ if (( $+commands[brew] )); then
     if [[ -d "$HOMEBREW_SITE_FUNCTIONS" ]]; then
         typeset -TUx FPATH fpath
         fpath=("$HOMEBREW_SITE_FUNCTIONS" $fpath)
-
-        # Load and initialise completion system
-        autoload -Uz compinit
-        compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
     fi
 fi
