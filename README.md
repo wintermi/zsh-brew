@@ -13,6 +13,8 @@ autoload -Uz compinit
 compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
 ```
 
+If you do not have the brew install directory already within your `$PATH`, be sure to include this plugin before any additional plugins that use applications installed via brew (e.g. eza, starship, etc.).
+
 ## Prerequisite Checks
 A check will be performed to verify that `brew` has been installed:
 
