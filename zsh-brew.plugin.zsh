@@ -18,6 +18,9 @@ if (( ! $+commands[brew] )); then
     if [[ ! -z "$BREW_PATH" ]]; then
         source <("$BREW_PATH" shellenv)
     fi
+else
+    # Ensure that shell environment is fully configured
+    source <(brew shellenv)
 fi
 
 if (( $+commands[brew] )); then
